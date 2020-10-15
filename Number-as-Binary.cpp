@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <ctime> 
 using namespace std;
 
 void NumberAsBinary(char* _result, unsigned int _number) {
@@ -11,5 +12,16 @@ void NumberAsBinary(char* _result, unsigned int _number) {
 
 int main()
 {
-    cout << "Hello World!\n";
+    srand(time(NULL));
+    int tmp;
+    char* result = new char[11];
+
+    for (int i = 0; i < 10; i++) {
+        tmp = rand() % 513;
+        NumberAsBinary(result, tmp);
+        cout << tmp << " " << result << endl;
+    }
+
+    delete[] result;
+    return 0;
 }
